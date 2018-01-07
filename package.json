@@ -2,10 +2,10 @@
   "name": "react-remarkbox",
   "version": "0.0.0",
   "description": "React component for Remarkbox",
+  "license": "MIT",
+  "author": "Benjamim Sonntag <benjamimsonntag@gmail.com>",
   "main": "dist/index.js",
   "repository": "git@github.com:bsonntag/react-remarkbox.git",
-  "author": "Benjamim Sonntag <benjamimsonntag@gmail.com>",
-  "license": "MIT",
   "scripts": {
     "lint": "eslint src"
   },
@@ -14,6 +14,7 @@
     "eslint-config-seegno": "^10.0.0",
     "eslint-plugin-flowtype": "^2.41.0",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-react": "^7.5.1"
+    "eslint-plugin-react": "^7.5.1",
+    "sort-package-json": "^1.7.1"
   }
 }
