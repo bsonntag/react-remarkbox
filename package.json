@@ -9,6 +9,9 @@
   "scripts": {
     "lint": "eslint src"
   },
+  "dependencies": {
+    "iframe-resizer": "^3.5.15"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
