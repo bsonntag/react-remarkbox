@@ -2,6 +2,11 @@
   "name": "react-remarkbox",
   "version": "0.0.1",
   "description": "React component for Remarkbox",
+  "keywords": [
+    "comments",
+    "react",
+    "remarkbox"
+  ],
   "license": "MIT",
   "author": "Benjamim Sonntag <benjamimsonntag@gmail.com>",
   "main": "dist/index.js",
