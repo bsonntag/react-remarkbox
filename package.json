@@ -12,7 +12,9 @@
   "main": "dist/index.js",
   "repository": "git@github.com:bsonntag/react-remarkbox.git",
   "scripts": {
-    "build": "babel src --out-dir dist",
+    "bundle": "rm -rf dist && npm run bundle-src && npm run bundle-types",
+    "bundle-src": "babel src --out-dir dist",
+    "bundle-types": "flow gen-flow-files src/index.js > dist/index.js.flow",
     "lint": "eslint src"
   },
   "dependencies": {
