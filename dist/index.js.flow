@@ -1,0 +1,29 @@
+// @flow
+
+import React, {Component} from "react";
+import {iframeResizer} from "iframe-resizer";
+declare class Class0 extends HTMLElement {
+
+  allowFullScreen: boolean;
+  contentDocument: Document;
+  contentWindow: any;
+  frameBorder: string;
+  height: string;
+  marginHeight: string;
+  marginWidth: string;
+  name: string;
+  sandbox: DOMTokenList;
+  scrolling: string;
+  src: string;
+  srcDoc: string;
+  width: string;
+}
+declare export default class extends Component<{className?: string, remarkboxKey: string, style?: Object, threadFragment?: string, threadUri: string}> {
+
+  iframe: ?Class0;
+  onRef: (iframe: ?Class0) => void;
+  componentDidMount(): void;
+  getRemarkboxUrl(): string;
+  render(): $Exact<{+key: string | number | null, +props: mixed /* UNEXPECTED TYPE: EvalT */, +ref: any, +type: ElementType}>;
+}
+
