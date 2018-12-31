@@ -7,10 +7,10 @@
     "react",
     "remarkbox"
   ],
+  "repository": "git@github.com:bsonntag/react-remarkbox.git",
   "license": "MIT",
   "author": "Benjamim Sonntag <benjamimsonntag@gmail.com>",
   "main": "dist/index.js",
-  "repository": "git@github.com:bsonntag/react-remarkbox.git",
   "scripts": {
     "bundle": "rm -rf dist && babel src --out-dir dist",
     "lint": "eslint ."
@@ -26,7 +26,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^5.11.1",
-    "eslint-config-seegno": "^11.0.1",
-    "sort-package-json": "^1.7.1"
+    "eslint-config-seegno": "^11.0.1"
   }
 }
