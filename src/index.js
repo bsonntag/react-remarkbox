@@ -1,57 +1,26 @@
-// @flow
-
-/**
- * Module dependencies.
- */
-
 import { iframeResizer } from 'iframe-resizer';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-/**
- * `Props` type.
- */
+function getRemarkboxUrl(remarkboxKey, threadUri) {
+  return `https://my.remarkbox.com/embed?rb_owner_key=${remarkboxKey}&thread_uri=${encodeURIComponent(threadUri)}`;
+}
 
-type Props = {
-  className?: string,
-  remarkboxKey: string,
-  style?: Object,
-  threadFragment?: string,
-  threadUri: string,
-};
+class Remarkbox extends Component {
 
-/**
- * `Remarkbox` component.
- */
-
-class Remarkbox extends Component<Props> {
-
-  /**
-   * Iframe reference.
-   */
-
-  iframe: ?HTMLIFrameElement = null;
-
-  /**
-   * On iframe reference.
-   */
-
-  onRef = (iframe: ?HTMLIFrameElement) => {
-    this.iframe = iframe;
+  static propTypes = {
+    className: PropTypes.string,
+    remarkboxKey: PropTypes.string.isRequired,
+    style: PropTypes.object,
+    threadFragment: PropTypes.string,
+    threadUri: PropTypes.string.isRequired,
   };
 
-  /**
-   * Get Remarkbox URL.
-   */
+  iframe = null;
 
-  getRemarkboxUrl(): string {
-    const { remarkboxKey, threadUri } = this.props;
-
-    return `https://my.remarkbox.com/embed?rb_owner_key=${remarkboxKey}&thread_uri=${encodeURIComponent(threadUri)}`;
-  }
-
-  /**
-   * Component did mount.
-   */
+  onRef = iframe => {
+    this.iframe = iframe;
+  };
 
   componentDidMount() {
     if (!this.iframe) {
@@ -71,10 +40,6 @@ class Remarkbox extends Component<Props> {
     }, this.iframe);
   }
 
-  /**
-   * Render.
-   */
-
   render() {
     const { className, style } = this.props;
 
@@ -84,7 +49,7 @@ class Remarkbox extends Component<Props> {
         frameBorder={0}
         ref={this.onRef}
         scrolling={'no'}
-        src={this.getRemarkboxUrl()}
+        src={getRemarkboxUrl()}
         style={style}
         tabIndex={0}
         title={'Remarkbox'}
@@ -93,9 +58,5 @@ class Remarkbox extends Component<Props> {
   }
 
 }
-
-/**
- * Export `Remarkbox` component.
- */
 
 export default Remarkbox;
