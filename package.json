@@ -16,7 +16,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "iframe-resizer": "^3.5.15",
+    "iframe-resizer": "^3.6.3",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
