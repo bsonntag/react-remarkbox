@@ -8,6 +8,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _iframeResizer = require('iframe-resizer');
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -20,17 +24,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-/**
- * Module dependencies.
- */
-
-/**
- * `Remarkbox` component.
- */
-
-/**
- * `Props` type.
- */
+function getRemarkboxUrl(remarkboxKey, threadUri) {
+  return 'https://my.remarkbox.com/embed?rb_owner_key=' + remarkboxKey + '&thread_uri=' + encodeURIComponent(threadUri);
+}
 
 var Remarkbox = function (_Component) {
   _inherits(Remarkbox, _Component);
@@ -51,36 +47,7 @@ var Remarkbox = function (_Component) {
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  /**
-   * Iframe reference.
-   */
-
-  /**
-   * On iframe reference.
-   */
-
   _createClass(Remarkbox, [{
-    key: 'getRemarkboxUrl',
-
-
-    /**
-     * Get Remarkbox URL.
-     */
-
-    value: function getRemarkboxUrl() {
-      var _props = this.props,
-          remarkboxKey = _props.remarkboxKey,
-          threadUri = _props.threadUri;
-
-
-      return 'https://my.remarkbox.com/embed?rb_owner_key=' + remarkboxKey + '&thread_uri=' + encodeURIComponent(threadUri);
-    }
-
-    /**
-     * Component did mount.
-     */
-
-  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (!this.iframe) {
@@ -100,17 +67,12 @@ var Remarkbox = function (_Component) {
         }
       }, this.iframe);
     }
-
-    /**
-     * Render.
-     */
-
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props,
-          className = _props2.className,
-          style = _props2.style;
+      var _props = this.props,
+          className = _props.className,
+          style = _props.style;
 
 
       return _react2.default.createElement('iframe', {
@@ -118,7 +80,7 @@ var Remarkbox = function (_Component) {
         frameBorder: 0,
         ref: this.onRef,
         scrolling: 'no',
-        src: this.getRemarkboxUrl(),
+        src: getRemarkboxUrl(),
         style: style,
         tabIndex: 0,
         title: 'Remarkbox'
@@ -129,8 +91,11 @@ var Remarkbox = function (_Component) {
   return Remarkbox;
 }(_react.Component);
 
-/**
- * Export `Remarkbox` component.
- */
-
+Remarkbox.propTypes = {
+  className: _propTypes2.default.string,
+  remarkboxKey: _propTypes2.default.string.isRequired,
+  style: _propTypes2.default.object,
+  threadFragment: _propTypes2.default.string,
+  threadUri: _propTypes2.default.string.isRequired
+};
 exports.default = Remarkbox;
