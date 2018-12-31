@@ -13,7 +13,7 @@
   "repository": "git@github.com:bsonntag/react-remarkbox.git",
   "scripts": {
     "bundle": "rm -rf dist && babel src --out-dir dist",
-    "lint": "eslint src"
+    "lint": "eslint ."
   },
   "dependencies": {
     "iframe-resizer": "^3.5.15",
@@ -25,11 +25,8 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^4.15.0",
-    "eslint-config-seegno": "^10.0.0",
-    "eslint-plugin-flowtype": "^2.41.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-react": "^7.5.1",
+    "eslint": "^5.11.1",
+    "eslint-config-seegno": "^11.0.1",
     "sort-package-json": "^1.7.1"
   }
 }
