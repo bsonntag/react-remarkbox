@@ -4,10 +4,7 @@ module.exports = {
   },
   extends: 'seegno',
   rules: {
-    'comma-dangle': [
-      'error',
-      'always-multiline',
-    ],
+    'comma-dangle': ['error', 'always-multiline'],
     'react/prop-types': 'error',
   },
   settings: {
