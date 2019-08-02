@@ -29,6 +29,7 @@ const App = () => (
 
     <Remarkbox
       remarkboxKey={'your-remarkbox-key-goes-here'}
+      threadTitle={'This is a title'}
       threadUri={'http://your-domain.test/some-page'}
     />
   </div>
