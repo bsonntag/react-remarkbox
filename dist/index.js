@@ -35,8 +35,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function getRemarkboxUrl(remarkboxKey, threadUri) {
-  return "https://my.remarkbox.com/embed?rb_owner_key=".concat(remarkboxKey, "&thread_uri=").concat(encodeURIComponent(threadUri));
+function getRemarkboxUrl(remarkboxKey, threadUri, threadTitle) {
+  return "https://my.remarkbox.com/embed?rb_owner_key=".concat(remarkboxKey, "&thread_title=").concat(encodeURIComponent(threadTitle), "&thread_uri=").concat(encodeURIComponent(threadUri));
 }
 
 var Remarkbox =
@@ -89,13 +89,16 @@ function (_Component) {
     value: function render() {
       var _this$props = this.props,
           className = _this$props.className,
-          style = _this$props.style;
+          remarkboxKey = _this$props.remarkboxKey,
+          style = _this$props.style,
+          threadTitle = _this$props.threadTitle,
+          threadUri = _this$props.threadUri;
       return _react.default.createElement("iframe", {
         className: className,
         frameBorder: 0,
         ref: this.onRef,
         scrolling: 'no',
-        src: getRemarkboxUrl(),
+        src: getRemarkboxUrl(remarkboxKey, threadUri, threadTitle),
         style: style,
         tabIndex: 0,
         title: 'Remarkbox'
@@ -111,6 +114,7 @@ _defineProperty(Remarkbox, "propTypes", {
   remarkboxKey: _propTypes.default.string.isRequired,
   style: _propTypes.default.object,
   threadFragment: _propTypes.default.string,
+  threadTitle: _propTypes.default.string.isRequired,
   threadUri: _propTypes.default.string.isRequired
 });
 
